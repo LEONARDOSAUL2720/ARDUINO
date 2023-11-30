@@ -1,0 +1,2 @@
+- inicializar el proyecto con express y mysql2
+npm install express mysql2 body-parser
