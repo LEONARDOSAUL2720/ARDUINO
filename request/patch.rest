@@ -1,0 +1,10 @@
+PATCH   http://localhost:3000/usuarios HTTP/1
+Content-Type: application/json
+
+{
+"id_usuario": "13",
+"nombres": "Diego", 
+"apellidos" : "Buenavista", 
+"puesto": "1"
+}
+

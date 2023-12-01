@@ -1,15 +1,24 @@
 import { connection } from '../bd.js';
 
 export const metodoPatch = (app, ruta)=>{
-    app.patch('/usuarios', (req, res) => {
+    app.patch(ruta, (req, res) => {
         // Obtener los datos del nuevo usuario desde el cuerpo de la solicitud
-        const { id_usuario, nombres, apellidos, puesto, acceso_id } = req.body;
+        const { id_usuario, nombres, apellidos, puesto } = req.body;
       
-        //  // Validar que los campos requeridos estén presentes
-        //  if (!id_usuario || !nombres || !apellidos || !rol_acceso) {
-        //   return res.status(400).json({ mensaje: 'Los campos id_usuario, nombres, apellidos y rol_acceso son obligatorios.' });
-        // }
-      
+        const puestoInt = parseInt(puesto, 10);
+         let acceso_id;
+
+        switch (puestoInt) {
+          case 1:
+            acceso_id = 1;
+            break;
+          case 2:
+            acceso_id = 2;
+            break;
+          default:
+            acceso_id = 0;
+            break;
+        }
         // Crear un objeto con los datos del nuevo usuario
         const nuevoUsuario = { nombres, apellidos, puesto, acceso_id };
       
