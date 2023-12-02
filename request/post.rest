@@ -2,8 +2,8 @@ POST  http://localhost:3000/usuarios HTTP/1
 Content-Type: application/json
 
 {
-"nombres": "Jorge", 
-"apellidos" : "Lara", 
-"puesto": "2"
+"nombres": "Valeria", 
+"apellidos" : "Sanchez", 
+"puesto": "1"
 }
 
