@@ -4,6 +4,7 @@ Content-Type: application/json
 {
 "nombres": "Valeria", 
 "apellidos" : "Sanchez", 
-"puesto": "1"
+"puesto": "1", 
+"rfid": "0xAC, 0xE5, 0xD4, 0xOO"
 }
 

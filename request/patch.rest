@@ -2,9 +2,10 @@ PATCH   http://localhost:3000/usuarios HTTP/1
 Content-Type: application/json
 
 {
-"id_usuario": "13",
-"nombres": "Diego", 
-"apellidos" : "Buenavista", 
-"puesto": "1"
+"id_usuario": "1",
+"nombres": "Juan Carlos", 
+"apellidos" : "Gonzalez", 
+"puesto": "1", 
+"rfid": ""
 }
 

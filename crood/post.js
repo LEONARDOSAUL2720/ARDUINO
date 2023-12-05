@@ -3,10 +3,10 @@ import { connection } from '../bd.js';
 export const metodoPost= (app, ruta) =>{
     app.post('/usuarios', (req, res) => {
         // Obtener los datos del nuevo usuario desde el cuerpo de la solicitud
-        const { nombres, apellidos, puesto } = req.body;
+        const { nombres, apellidos, puesto, rfid } = req.body;
       
         // Validar que los campos requeridos estén presentes
-        if (!nombres || !apellidos || !puesto ) {
+        if (!nombres || !apellidos || !puesto || !rfid ) {
           return res.status(400).json({ mensaje: 'Los campos nombres, apellidos y puesto son obligatorios.' });
           }
                 // Convertir el valor de puesto a entero
@@ -28,7 +28,7 @@ export const metodoPost= (app, ruta) =>{
           }
 
         // Crear un objeto con los datos del nuevo usuario
-        const nuevoUsuario = { nombres, apellidos, puesto, acceso_id };
+        const nuevoUsuario = { nombres, apellidos, puesto, acceso_id, rfid };
       
         // Insertar el nuevo usuario en la base de datos
         connection.query('INSERT INTO usuarios SET ?', nuevoUsuario, (error, results) => {
